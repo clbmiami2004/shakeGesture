@@ -9,11 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    
+    @IBOutlet weak var testLabelOutlet: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         randomizeBackgroundColor()
+        randomizeLabel()
     }
     
     override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
@@ -25,7 +30,14 @@ class ViewController: UIViewController {
     
     func randomizeBackgroundColor() {
         view.backgroundColor = .random()
+        
     }
 
+    
+    func randomizeLabel() {
+        if view.backgroundColor == .red {
+            testLabelOutlet.backgroundColor = .black
+        }
+    }
 }
 
